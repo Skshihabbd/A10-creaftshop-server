@@ -7,10 +7,15 @@ app.use(cors());
 app.use(express.json());
 require("dotenv").config();
 
-// username-assignment-Craft-bd
-// userpassword-XpkSadTAcG7n6p2i
+
+app.use(cors({
+  origin: 'http://localhost:5173', // allow this origin
+  methods: 'GET,POST,PUT,DELETE', // specify allowed methods if needed
+  credentials: true // if you need to allow cookies or other credentials
+}));
 
 const uri = `mongodb+srv://${process.env.DB_USERNAMES}:${process.env.DB_PASSWORDS}@cluster0.pppehle.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -24,7 +29,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    // await client.connect();
+    //  await client.connect();
     //  Send a ping to confirm a successful connection
     // await client.db("admin").command({ ping: 1 });
     // console.log(
