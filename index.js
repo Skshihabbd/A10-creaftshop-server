@@ -50,7 +50,7 @@ async function run() {
       const result = await allData.toArray();
       res.send(result)
     });
-// this is rest api of user
+// this is rest api of user api
     app.get("/usersenddata/:id", async (req, res) => {
       const idd = req.params.id;
       const query = { _id: new ObjectId(idd) };
