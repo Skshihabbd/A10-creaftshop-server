@@ -8,11 +8,11 @@ app.use(express.json());
 require("dotenv").config();
 
 
-app.use(cors({
-  origin: 'http://localhost:5173', // allow this origin
-  methods: 'GET,POST,PUT,DELETE', // specify allowed methods if needed
-  credentials: true // if you need to allow cookies or other credentials
-}));
+// app.use(cors({
+//   origin: 'http://localhost:5173', // allow this origin
+//   methods: 'GET,POST,PUT,DELETE', // specify allowed methods if needed
+//   credentials: true // if you need to allow cookies or other credentials
+// }));
 
 const uri = `mongodb+srv://${process.env.DB_USERNAMES}:${process.env.DB_PASSWORDS}@cluster0.pppehle.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
